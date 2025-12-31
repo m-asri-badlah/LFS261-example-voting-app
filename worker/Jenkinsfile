@@ -1,12 +1,12 @@
 pipeline {
   agent any
   tools{
-    maven'maven3.8.9'
+    maven 'maven 3.8.9'
   }
   stages{
     stage("build"){
         steps{
-            echo 'Compilingworkerapp'
+            echo 'Compiling worker app'
             dir('worker'){
               sh 'mvn compile'
             }
@@ -25,7 +25,7 @@ pipeline {
   }
   post{
     always{
-        echo'Buildingmultibranchpipelineforworkeriscompleted..'
+        echo 'Building multibranch pipeline for worker is completed..'
         }
     }
 }
